@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.Determine if one number is greater than another and log the result.</title>
+</head>
+
+<body>
+    <h4>Enter First Element</h4>
+    <input type="text" id="input1">
+
+    <h4>Enter Second Element</h4>
+    <input type="text" id="input2">
+
+    <h4 id="answer"></h4>
+</body>
+</html>
+
+<!-- 2.Determine if one number is greater than another and log the result. -->
+
+<script>
+let a = document.getElementById("input1").value
+let b = document.getElementById("input2").value
+let c = +a  <= +b; 
+document.getElementById("answer").innerHTML = c
+</script>
