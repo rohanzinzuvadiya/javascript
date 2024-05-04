@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+        <h1 style="color: red; font-size: 23px;">
+            5.Calculate GST : If a goods or services is sold at Rs. 1,000 and the GST rate applicable is 18%, then the
+            net price calculated will be = 1,000+ (1,000X(18/100)) = 1,000+180 = Rs. 1,180.
+        </h1>
+    </center>
+
+    <h1>Enter Total Amount:</h1>
+    <input type="text" name="" id="input1">
+
+    <h1 id="answer">0</h1>
+
+</body>
+
+</html>
+
+<!-- 5.Calculate GST : If a goods or services is sold at Rs. 1,000 and the GST rate applicable is 18%,
+     then the net price calculated will be = 1,000+ (1,000X(18/100)) = 1,000+180 = Rs. 1,180. -->
+
+     <script>
+        let amount = document.getElementById("input1").value
+
+        let percentage = amount * (18 / 100)
+
+        let  total_amount = +amount + percentage
+        document.getElementById("answer").innerText = total_amount
+     </script>

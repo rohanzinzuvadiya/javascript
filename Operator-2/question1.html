@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-1</title>
+</head>
+<body>
+    
+    <center>
+    <h1 style="color: red;">FINAL RESULT ></h1>
+    </center>
+
+
+    <h1>Maths Marks:</h1>
+    <input type="text " id="input1">
+
+    <h1>English Marks:</h1>
+    <input type="text" id="input2">
+
+    <h1>Physics Marks:</h1>
+    <input type="text" id="input3">
+
+    <h1>Chemistry Marks:</h1>
+    <input type="text" id="input4">
+
+    <h1>Computer Marks:</h1>
+    <input type="text" id="input5">
+
+    <h1 id="answer">total marks:</h1>
+    <h1 id="percentage">percentage:</h1>
+    
+
+</body>
+</html>
+
+<!-- 1. Calculate total marks obtained by student in 5 subjects find percentage of it  
+                 (percentage = (total  subjects/ 500) * 100)' -->
+
+   <script>
+   let a = document.getElementById("input1").value
+   let b = document.getElementById("input2").value
+   let c = document.getElementById("input3").value
+   let d = document.getElementById("input4").value
+   let e = document.getElementById("input5").value
+
+   let total = +a + +b + +c + +d + +e
+   document.getElementById("answer").innerText = total
+
+   let percentage = (total/500) * 100  
+   document.getElementById("percentage").innerText = percentage
+   </script>
