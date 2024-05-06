@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+
+    <h1>BMI Calculator</h1>
+
+    <p>Enter your weight in kilograms:</p>
+    <input type="number" id="weight">
+
+    <p>Enter your height in meters:</p>
+    <input type="number" id="height">
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+
+    <p id="answer"></p>
+
+  </body>
+</html>
+
+
+<script>
+
+    let a = document.getElementById("weight").value
+    let b = document.getElementById("height").value
+
+    let total = +a / (+b * +b)
+
+    document.getElementById("answer").innerHTML = total
+</script>
+
+</html>

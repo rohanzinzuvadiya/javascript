@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+
+        <h1>Shopping Cart</h1>
+
+        <h1>Enter price</h1>
+        <input type="text" id="price">
+
+        <h1>Enter quantity</h1>
+        <input type="text" id="quentity">
+
+        <br><br>
+
+        <button onclick="calculateTotalCost()">Calculate TotalCost</button>
+
+        <h1 id="answer">TotalCost</h1>
+    </center>
+</body>
+
+<script>
+
+    let a = document.getElementById("price").value
+    let b = document.getElementById("quentity").value
+
+    let total = +a * +b
+
+    document.getElementById("answer").innerHTML = total
+</script>
+
+</html>
