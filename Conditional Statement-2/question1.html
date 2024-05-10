@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+    <center>
+
+        <br><br><br>
+
+        <h1>---Calculates The Electricity Bill---</h1>
+
+        <h2>Enter a electricity Units:</h2>
+        <input type="text" id="input1"
+        >
+        <h2 id="ans"></h2>
+    </center>
+</body>
+</html>
+<script>
+    let unit=document.getElementById("input1").value
+
+    if(unit === ""){
+     document.getElementById("ans").innerHTML="Enter the Unit!"
+    }else{
+        
+        if(unit >=1 && unit <=100){
+    document.getElementById("ans").innerHTML=unit*1
+        }
+       else if(unit >=101 && unit <=200){
+    document.getElementById("ans").innerHTML=unit*2
+        }
+       else if(unit >=200){
+    document.getElementById("ans").innerHTML=unit*3
+        }
+    }
+</script>
