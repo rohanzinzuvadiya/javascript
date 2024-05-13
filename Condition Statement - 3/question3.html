@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+
+<body>
+    <center>
+    <h1>Enter Any Number</h1>
+
+    <input type="text" id="number">
+
+    <h1 id="answer"></h1>
+</center>
+</body>
+</html>
+
+<!-- 3.Use conditional statement find if its even or odd. -->
+
+<script>
+    let number = document.getElementById("number").value 
+
+
+    if(number === ""){
+        document.getElementById("answer").innerHTML = "Enter Any Number"
+    }else{
+
+        if(number % 2 == 0){
+        document.getElementById("answer").innerHTML = "Even"
+    }else{
+        document.getElementById("answer").innerHTML = "Odd"
+
+    }
+    }
+
+
+</script>

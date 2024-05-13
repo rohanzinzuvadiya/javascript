@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Enter Password</h1>
+
+    <br>
+
+    <input type="text" id="password">
+
+    <h2 id="answer"></h2>
+
+     </center>
+</body>
+</html>
+
+<!-- 1. Check if password is correct . -->
+
+<script>
+    let password = document.getElementById("password").value 
+    let orignal = "p@ssword123"
+
+
+    if(pass === ""){
+        document.getElementById("answer").innerHTML = "Enter Your Password"
+    }else{
+        if(pass === orignal){
+        document.getElementById("answer").innerHTML = "Login Successfully"
+    }else{
+        document.getElementById("answer").innerHTML = "Password Don't Match"
+    }
+    }
+    
+</script>
