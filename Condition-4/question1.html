@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+    
+<center>
+    <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke;">
+
+    <br><br>
+    <h1>Grade System</h1>
+
+    <br><br>
+    
+     
+    <label for="">Enter Marks :</label>
+    <input type="text" id="input1">
+
+    <br><br>
+
+    <h1 id="answer"></h1>
+
+    </div>
+</center>
+    
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("input1").value
+
+    if(a==""){
+        document.getElementById("answer").innerHTML="Please Enter Your Marks"
+    }else{
+        if(a>90 && a<=100){
+            document.getElementById("answer").innerHTML="A"      
+        }
+        else if (a>80 && a<=900){
+            document.getElementById("answer").innerHTML="B"
+        }
+        else if (a>65 && a<=80){
+            document.getElementById("answer").innerHTML="C"
+        }
+        else if (a>50 && a<=65){
+            document.getElementById("answer").innerHTML="D"
+        }
+        else{
+            document.getElementById("answer").innerHTML="FAIL"
+        }
+        
+    }
+</script>

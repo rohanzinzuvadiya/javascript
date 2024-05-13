@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+
+<body>
+    
+    <center>
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px;">
+    
+        <br><br>
+        <h1>Calculate Simple Interest</h1>
+    
+        <br><br>
+        
+         
+        <label for="">Enter Principal Amount :</label>
+        <input type="text" id="input1">
+
+        <br><br>
+
+        <label for="">Enter Interest Rate :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="input2">
+
+        <br><br>
+
+        <label for="">Enter Time Duration :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="input3">
+    
+        <br><br>
+    
+        <h1 id="answer"></h1>
+    
+        </div>
+    </center>
+</body>
+</html>
+
+<script>
+    let a = document.getElementById("input1").value 
+    let b = document.getElementById("input2").value
+    let c = document.getElementById("input3").value
+    
+    let interest = (+a + +b + +c) / 100
+    document.getElementById("answer").innerHTML=interest
+</script>

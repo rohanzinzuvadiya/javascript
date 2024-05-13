@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<body>
+
+    <center>
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke;">
+    
+        <br><br>
+        <h1>Change Password Logic</h1>
+        
+        <br>
+
+        <h3 style="color: red;"  id="current_password"></h3>
+        
+         
+        <label for="">Enter New Password :</label>
+        <input type="text" id="input1">
+    
+        <br><br>
+    
+        <h2 id="answer"></h2>
+    
+        </div>
+    </center>
+    
+</body>
+</html>
+
+<script>
+    let password = "password@123"
+    document.getElementById("current_password").innerHTML = "Your Current Password :" +password
+
+    let new_password = document.getElementById("input1").value 
+
+    if(new_password === ""){
+        document.getElementById("answer").innerHTML = "Enter Valid Password"
+    }else{
+        password = new_password
+        document.getElementById("answer").innerHTML = "Your New Password :" +password
+    }
+</script>
