@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<!-- 4.Convert dollars into Rupees. -->
+
+<body>
+    <center>
+
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            
+            <br><br><br><br>
+            
+        <h1>Convert Dollar to INR</h1>
+        
+        
+
+
+        <h2>Enter Your Amount In USD</h2>
+        <input type="text" id="dollar">
+
+        <h1 style="color: greenyellow;" id="answer">
+
+        </h1>
+
+        </div>
+
+    </center>
+</body>
+</html>
+
+<script>
+    let dollar = document.getElementById("dollar").value 
+
+    if(dollar === ""){
+        document.getElementById("answer").innerHTML = "Enter Valid  Amount"
+    }else{
+        
+    let convert = dollar * 83.51 
+
+document.getElementById("answer").innerHTML = "INR price is " + convert
+    }
+</script>

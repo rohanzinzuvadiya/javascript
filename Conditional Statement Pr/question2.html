@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+
+<!-- 2. Write a program that calculates a discount based on the purchase amount.Prices equal or over 100 discount have a discount of 20. Prices equal or over 50 have a discount of 10. Otherwise discount is 0 -->
+
+<body>
+
+ <center>
+
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            
+            <br><br><br><br>
+
+    <h1>Enter Your Total Amount</h1>
+
+    <input type="text" id="Amount">
+
+
+    <h1 id="discount"></h1>
+    <h3 style="color: red;" id="answer"></h3>
+
+    </div>
+</center>
+
+</body>
+</html>
+
+<script>
+
+    let amount = document.getElementById("Amount").value 
+
+   if(amount === ""){
+    document.getElementById("answer").innerHTML = "Enter Valid Amount"
+   }else{
+    if(amount >= 100){
+        let sum = amount * (20 / 100)
+        let add = amount - sum
+
+        document.getElementById("discount").innerHTML = "yeahh! you got 20% discount"
+        document.getElementById("answer").innerHTML = "you pay " + add + "₹ only"
+    }else if(amount >= 50 && amount <= 99){
+        let sum = amount * (10 / 100)
+        let add = amount - sum
+
+        document.getElementById("discount").innerHTML = "yay! you got 10% discount"
+        document.getElementById("answer").innerHTML = "you pay " + add + "₹ only"
+    }else{
+        document.getElementById("answer").innerHTML = "you pay " + amount + "₹ only"
+    }
+   }
+</script>

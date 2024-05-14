@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+   
+    <!-- 1. Write a program that calculates the ticket price based on age with the following conditions: age below 12 pay a ticket price of 5, age below 18 pay a ticket price of 10, age below 60 pay a ticket price of 20, age over 60 play a ticket price of 15. -->
+
+<body>
+    <center>
+
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            
+            <br><br><br><br>
+
+
+        <h1>Ticket Price</h1>
+
+        <label for="">Enter Your Age</label>
+
+        <br><br>
+
+        <input type="text" id="age">
+
+        <h2 style="color: red;"  id="answer"></h2>
+
+        </div>
+
+    </center>
+</body>
+</html>
+
+<script>
+    let age = document.getElementById("age").value 
+
+    if(age === ""){
+        document.getElementById("answer").innerHTML = "Enter Valid Age"
+    }else{
+        if(age <= 12){
+        document.getElementById("answer").innerHTML = "your ticket price is : " + 5
+        }else if(age >= 13 && age <= 18){
+            document.getElementById("answer").innerHTML = "your ticket price is : " + 10
+        }else if(age >= 19 && age <= 60){
+            document.getElementById("answer").innerHTML = "your ticket price is : " + 20
+        }else{
+            document.getElementById("answer").innerHTML = "your ticket price is : " + 15
+        }
+    }  
+</script>

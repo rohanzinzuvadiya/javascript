@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+
+<!-- 3. Write a simple number guessing game. Provide a secret number and a guess. Based on those numbers give players clues if their guess is higher, lower or correct. -->
+
+<body>
+
+    <center>
+
+        <div style="height: 500px; width: 500px; border: 1px solid black; border-radius: 10px; background-color: whitesmoke; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            
+            <br><br><br><br>
+
+      
+    <h1>Guess Any Number</h1>
+   
+    <input type="text" id="Number">
+
+    
+
+    <h1 style="color: red;" id="wronganswer"></h1>
+    <h1 style="color: green;" id="rightanswer"></h1>
+    <h1 id="guess"></h1>
+    <h2 style="color: blue;" id="write"></h2>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    let SecretNumber = 6
+    let Guess = document.getElementById("Number").value 
+
+   if(Guess === ""){
+    document.getElementById("guess").innerHTML = "Guess The Number"
+   }else{
+    if(Guess >= 7 && Guess <= 20){
+        document.getElementById("wronganswer").innerHTML = "Enter More Lower Amount"
+    }else if(Guess < 6){
+        document.getElementById("wronganswer").innerHTML = "Enter Higher Amount"
+    }else if(Guess >= 21){
+        document.getElementById("write").innerHTML = "Enter only between 1 to 20 numbers"
+    }else{
+        document.getElementById("rightanswer").innerHTML = "Correct"
+
+    }
+   }
+
+</script>
