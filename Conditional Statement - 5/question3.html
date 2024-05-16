@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+<body>
+    
+    <center>
+
+        <div style="max-width: 500px; height: 400px; border: 1px solid black; border-radius: 20px; background-color: rgb(237, 237, 237);">
+
+            <br><br><br><br>
+
+        <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Traffic Lights</h1>
+        
+
+        <br>
+
+        <select name="" id="lightcolor">
+            <option value=""></option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+        </select>
+
+        <br><br>
+
+            <h3 style="font-family: cursive; color: red;" id="answerred"></h3>
+            <h3 style="font-family: cursive; color: yellow;" id="answeryellow"></h3>
+            <h3 style="font-family: cursive; color: green;" id="answergreen"><green/h3>
+            <h3 style="font-family: cursive; color: rgb(225, 164, 164);" id="answerinvalid"></h3>
+        </div>
+        </center>
+
+</body>
+</html>
+
+<script>
+    let light = document.getElementById("lightcolor").value 
+
+    switch (light) {
+        case "red" : document.getElementById("answerred").innerHTML = "Stop!"
+        break
+
+        case "yellow" : document.getElementById("answeryellow").innerHTML = "Slow down!"
+        break
+
+        case "green" : document.getElementById("answergreen").innerHTML = "Go."
+
+        default : document.getElementById("answerinvalid").innerHTML = "Invalid light color"
+    }
+</script>
