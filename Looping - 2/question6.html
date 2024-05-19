@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+</head>
+
+<!-- Q6. Count odd numbers between 20 - 40..(while) -->
+
+<body>
+    <center>
+        <h1>Enter Any Number</h1>
+
+        <input type="text" id="number">
+
+        <h1 id="answer"></h1>
+    </center>
+</body>
+</html>
+
+<script>
+    let number = document.getElementById("number").value 
+    let i = 1
+    do{
+        if(i % 2 == 1){
+            document.getElementById("answer").innerHTML += i + "<br>"
+        }
+        i++
+    }while(i <= number)
+</script>

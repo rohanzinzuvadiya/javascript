@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+
+<!-- Q3.Reverse the number.(while). -->
+
+<body>
+    <center>
+        <div style="font-family: Arial, Helvetica, sans-serif; height: 100%; width: 600px; border: 1px solid black ; background-color: whitesmoke"> 
+
+        <h1>Enter The Number</h1>
+        <input type="number" id="input">
+
+        <h1 id="answer"></h1>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("input").value
+    let revers = 0
+    let remender
+    
+    while (number != 0) {
+        rem = number % 10 
+        revers = revers * 10 + rem
+        number = Math.floor(number/10)
+
+    }
+    document.getElementById("answer").innerHTML = revers
+</script>

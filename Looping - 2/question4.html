@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<!-- Q4. Find power of a number with exponent and base.(do..while) -->
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <center>
+
+        <div style="height: 100%; width: 600px; border: 1px solid black ; background-color: whitesmoke"> 
+
+        <h1>Enter The Number</h1>
+        <input type="number" id="input">
+        <h1>Enter The Exponent</h1>
+        <input type="number" id="input2">
+
+        <h1 id="answer"></h1>
+        </div>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("input").value
+    let exponent = document.getElementById("input2").value
+    let i = 1
+    let power = 1
+
+    do {
+        power *= number
+        document.getElementById("answer").innerHTML = power
+        i++
+    } while (i <= exponent);
+
+</script>
