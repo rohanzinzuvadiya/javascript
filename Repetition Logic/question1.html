@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+
+<body>
+    <center>
+
+        <div style="height: 100%; width: 500px; border: 1px solid black; background-color: whitesmoke;">
+        <h1 style="color: rebeccapurple;">Fizz Buzz</h1>
+
+        <input type="number" id="userInput" placeholder="Enter a number">
+        <button onclick="fizzBuzz()">Generate Fizz Buzz</button>
+
+        <h3  style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="answer"></h3><br>
+        </div>
+    </center>
+
+    <script>
+        function fizzBuzz() {
+            let userInput = document.getElementById("userInput").value;
+
+            let answer = document.getElementById("answer");
+            document.getElementById("answer").innerHTML = ""
+
+            for (let i = 1; i <= userInput; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                    document.getElementById("answer").innerHTML += "FizzBuzz<br>"
+
+                } else if (i % 3 === 0) {
+                    document.getElementById("answer").innerHTML += "Fizz<br>"
+
+                } else if (i % 5 === 0) {
+                    document.getElementById("answer").innerHTML += "Buzz<br>"
+                
+                } else {
+                    document.getElementById("answer").innerHTML += i + "<br>" 
+                    
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

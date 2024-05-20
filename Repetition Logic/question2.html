@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+
+<body>
+    <center>
+        <div style="height: 100%; width: 500px; border: 1px solid black; background-color: whitesmoke;">
+
+        <h1 style="color: rebeccapurple;">Enter the number</h1>
+        <input type="number" id="input">
+        <button onclick="calculateSum()">Calculate Sum</button>
+
+        <h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="answer"></h3>
+        </div>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function calculateSum() {
+        let number = document.getElementById("input").value
+        let revers = 0
+        let rem
+        let total = 0
+
+        while (number != 0) {
+            rem = number % 10
+            total += rem
+            revers = revers * 10 + rem
+            number = Math.floor(number / 10)
+
+        }
+        document.getElementById("answer").innerHTML = total
+    }
+</script>
