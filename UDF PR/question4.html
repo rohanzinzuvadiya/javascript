@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<body>
+
+    <center>
+
+        <div
+            style="border: 1px solid black; border-radius: 10px; height: 100%; width: 500px; background-color: whitesmoke; font-family: Arial, Helvetica, sans-serif;">
+            <h1>Palindrome Checker</h1>
+            <input type="number" id="num" placeholder="Enter a number">
+            <button onclick="pelendrom(document.getElementById('num').value)">Check</button>
+            <p id="result"></p>
+
+        </div>
+    </center>
+
+    <script>
+        function pelendrom(num) {
+            let originalNum = parseInt(num); 
+            let rev = 0, n = originalNum;
+            while (n != 0) {
+                let rem = n % 10
+                rev = rev * 10 + rem
+                n = Math.floor(n / 10)
+            }
+            console.log(rev)
+            if (originalNum == rev) {
+                document.getElementById("result").innerHTML = "Palindrome Number"
+            } else {
+                document.getElementById("result").innerHTML = "Non-Palindrome Number"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
