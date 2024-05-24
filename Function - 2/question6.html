@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 6</title>
+</head>
+<body>
+    <center>
+
+        <div style="border: 1px solid black ; border-radius: 10px; background-color: whitesmoke; height: 100%; width: 500px; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Enter a string</h1>
+
+        <input type="text" id="string">
+
+        <button onclick="checkString()">Check</button>
+
+        <h3 id="ans"></h3>
+        </div>
+    </center>
+</body>
+</html>
+
+<script>
+    function checkString() {
+        let str = document.getElementById("string").value
+        let result = ""
+        if (str.charAt(0).toUpperCase() === "A" || str.charAt(str.length - 1).toUpperCase() === "A") {
+            result = "The string has an 'A' at the starting or end."
+        } else {
+            result = "The string does not have an 'A' at the starting or end."
+        }
+        document.getElementById("ans").innerHTML = result
+    }
+</script>

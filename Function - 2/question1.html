@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question 1</title>
+  </head>
+
+    <!-- 1 Write a function that takes two numbers as parameters and returns their sum. -->
+
+  <body>
+
+    <center>
+
+        <div style="border: 1px solid black ; border-radius: 10px; background-color: whitesmoke; height: 100%; width: 500px; font-family: Arial, Helvetica, sans-serif;">
+    <h2>Add Two Numbers</h2>
+    <p>Enter two numbers to add:</p>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+</div>
+
+    </center>
+    </body>
+
+
+
+
+<script>
+  function addNumbers() {
+    let num1 = document.getElementById("num1").value
+    let num2 = document.getElementById("num2").value
+    let sum = num1 + num2;
+    document.getElementById("result").innerHTML = "The sum is: " + sum
+  }
+</script>
+
+  </body>
+</html>
