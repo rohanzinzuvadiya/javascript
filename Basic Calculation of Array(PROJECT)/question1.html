@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+
+    <center>
+        <div style="height: 250px; width: 500px; border-radius: 10px; background-color: whitesmoke; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">
+            <br><br>
+            <h1>String Pattern</h1>
+            <input type="text" id="input1" placeholder="Enter comma-separated strings">
+            <button onclick="getPattern()">Get Result</button>
+            <h4 id="result"></h4>
+        </div>
+    </center>
+
+</body>
+</html>
+
+<script>
+    // Function to get the pattern
+    function getPattern() {
+        // Get the input from the user
+        const userInput = document.getElementById("input1").value;
+
+        // Split the input into an array of strings
+        const strings = userInput.split(",");
+
+        // Filter the strings that start or end with 'a'
+        const result = strings.filter(str => {
+            str = str.trim(); // Remove extra spaces
+            return str[0] === 'a' || str[str.length - 1] === 'a';
+        });
+
+        // Display the result
+        const resultDiv = document.getElementById("result").innerHTML = "Result: " + result.join(", ");
+
+    }
+</script>
