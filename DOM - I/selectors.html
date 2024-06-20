@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <h1 id="h1">Heading 1</h1>
+  <h3 id="h3-1">Heading 3-1</h3>
+  <h3 id="h3-2">Heading 3-2</h3>
+  <h5 id="h5-1">Heading 5-1</h5>
+  <h5 id="h5-2">Heading 5-2</h5>
+  <p class="green">Green text</p>
+  <p class="blue">Blue text</p>
+  <p class="red">Red text</p>
+
+  <button onclick="changeH1()">Change H1</button>
+  <button onclick="changeH3()">Change H3</button>
+  <button onclick="changeH5()">Change H5</button>
+  <button onclick="changeGreen()">Change Green</button>
+  <button onclick="changeBlue()">Change Blue</button>
+  <button onclick="changeRed()">Change Red</button>
+
+  <script type="text/javascript">
+    function changeH1() {
+      document.querySelector('h1').style.color = 'red';
+    }
+
+    function changeH3() {
+      document.querySelectorAll('h3').forEach(h3 => h3.style.color = 'green');
+    }
+
+    function changeH5() {
+      document.querySelectorAll('h5').forEach(h5 => h5.style.color = 'blue');
+    }
+
+    function changeGreen() {
+      document.querySelectorAll('.green').forEach(element => element.style.color = 'green');
+    }
+
+    function changeBlue() {
+      document.querySelectorAll('.blue').forEach(element => element.style.color = 'blue');
+    }
+
+    function changeRed() {
+      document.querySelectorAll('.red').forEach(element => element.style.color = 'red');
+    }
+  </script>
+</body>
+</html>

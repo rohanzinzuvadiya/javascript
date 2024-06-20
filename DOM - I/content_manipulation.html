@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Content Manipulation</title>
+</head>
+<body>
+  <h1 id="firstname">Your FirstName</h1>
+  <div id="lastname">Your LastName</div>
+  <p id="fullname">Your First&LastName</p>
+  <hr/>
+  <button onclick="setFirstName()">FIRSTNAME</button>
+  <button onclick="setLastName()">LASTNAME</button>
+  <button onclick="setFullName()">FIRSTNAME NAME</button>
+  <button onclick="resetDefaults()">RESET DEFAULTS</button>
+
+  <script type="text/javascript">
+    function setFirstName() {
+      var firstName = prompt("Enter your first name:");
+      document.getElementById('firstname').innerHTML = firstName;
+    }
+
+    function setLastName() {
+      var lastName = prompt("Enter your last name:");
+      document.getElementById('lastname').innerHTML = lastName;
+    }
+
+    function setFullName() {
+      var firstName = document.getElementById('firstname').innerHTML;
+      var lastName = document.getElementById('lastname').innerHTML;
+      document.getElementById('fullname').innerHTML = firstName + ' ' + lastName;
+    }
+
+    function resetDefaults() {
+      document.getElementById('firstname').innerHTML = '';
+      document.getElementById('lastname').innerHTML = '';
+      document.getElementById('fullname').innerHTML = '';
+    }
+  </script>
+</body>
+</html>
