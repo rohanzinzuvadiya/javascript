@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        background-color: #ffa500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        border-radius: 20px 20px 20px 20px;
+        background-color: #fff;
+        padding: 30px;
+        margin-top: 300px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        height: auto;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Registration Form</h1>
+      <p>Fill out the form carefully for registration</p>
+
+      <form id="registrationForm">
+
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name"/>
+
+          <span class="error" id="firstNameError"></span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter your last name"/>
+
+          <span class="error" id="lastNameError"></span>
+        </div>
+
+
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender">
+            <option value="">Please Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+
+          <span class="error" id="genderError"></span>
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Student E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ex: myname@example.com"/>
+
+          <span class="error" id="emailError"></span>
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="studentId">Student ID:</label>
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            placeholder="Enter your student ID"/>
+
+          <span class="error" id="studentIdError"></span>
+
+        </div>
+
+
+        <div class="form-group">
+          <label for="classes">List of Classes:</label>
+          <select id="classes" name="classes">
+            <option value="">Please Select</option>
+            <option value="class1">Class 1</option>
+            <option value="class2">Class 2</option>
+            <option value="class3">Class 3</option>
+          </select>
+
+          <span class="error" id="classesError"></span>
+
+        </div>
+
+
+        <button type="submit">Submit</button>
+      </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+      $(document).ready(function () {
+        $("#registrationForm").submit(function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Validate form fields
+          var firstName = $("#firstName").val();
+          var lastName = $("#lastName").val();
+          var gender = $("#gender").val();
+          var email = $("#email").val();
+          var studentId = $("#studentId").val();
+          var classes = $("#classes").val();
+
+          var isValid = true;
+
+          // Validate first name
+          if (firstName.trim() === "") {
+            $("#firstNameError").text("First name is required.");
+            isValid = false;
+          } else {
+            $("#firstNameError").text("");
+          }
+
+          // Validate last name
+          if (lastName.trim() === "") {
+            $("#lastNameError").text("Last name is required.");
+            isValid = false;
+          } else {
+            $("#lastNameError").text("");
+          }
+
+          // Validate gender
+          if (gender === "") {
+            $("#genderError").text("Please select a gender.");
+            isValid = false;
+          } else {
+            $("#genderError").text("");
+          }
+
+          // Validate email
+          if (email.trim() === "") {
+            $("#emailError").text("Email is required.");
+            isValid = false;
+          } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            $("#emailError").text("Please enter a valid email address.");
+            isValid = false;
+          } else {
+            $("#emailError").text("");
+          }
+
+          // Validate student ID
+          if (studentId.trim() === "") {
+            $("#studentIdError").text("Student ID is required.");
+            isValid = false;
+          } else {
+            $("#studentIdError").text("");
+          }
+
+          // Validate classes
+          if (classes === "") {
+            $("#classesError").text("Please select a class.");
+            isValid = false;
+          } else {
+            $("#classesError").text("");
+          }
+
+          // If all fields are valid, submit the form
+          if (isValid) {
+            // Submit the form using AJAX or other methods
+            alert("Form submitted successfully!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
