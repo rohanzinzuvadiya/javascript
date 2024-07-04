@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Square Class Example</title>
+</head>
+<body>
+  <script>
+    class Square {
+      constructor(side) {
+        this.side = side;
+      }
+
+      getArea() {
+        return this.side * this.side;
+      }
+    }
+    
+    const mySquare = new Square(5);
+    document.write(`The area of my square is ${mySquare.getArea()} square units`);
+  </script>
+</body>
+</html>

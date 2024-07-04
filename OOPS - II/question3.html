@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rectangle Class Example</title>
+</head>
+<body>
+  <script>
+    class Rectangle {
+      constructor(length, width) {
+        this.length = length;
+        this.width = width;
+      }
+
+      getPerimeter() {
+        return 2 * (this.length + this.width);
+      }
+    }
+    
+    const myRectangle = new Rectangle(4, 6);
+    document.write(`The perimeter of my rectangle is ${myRectangle.getPerimeter()} units`);
+  </script>
+</body>
+</html>

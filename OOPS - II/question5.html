@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Class Example</title>
+</head>
+<body>
+  <script>
+    class User {
+      constructor(username, password) {
+        this.username = username;
+        this.password = password;
+      }
+      
+      printInfo() {
+        document.write(`Username: ${this.username}, Password: ${this.password}<br>`);
+      }
+    }
+    
+    const user1 = new User("johnDoe", "myPassword1");
+    const user2 = new User("janeDoe", "myPassword2");
+    
+    user1.printInfo();
+    user2.printInfo();
+  </script>
+</body>
+</html>
