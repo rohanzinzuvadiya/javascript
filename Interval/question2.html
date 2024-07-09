@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .card {
+        background-color: #0056b3;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 150px;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .value {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .label {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <i class="fas fa-graduation-cap icon"></i>
+        <div class="value" id="ans1">0</div>
+        <div class="label">Students Trained</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker-alt icon"></i>
+        <div class="value" id="ans2">0</div>
+        <div class="label">Branches</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-certificate icon"></i>
+        <div class="value" id="ans3">0</div>
+        <div class="label">Certification</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-book icon"></i>
+        <div class="value" id="ans4">0</div>
+        <div class="label">Approved Course</div>
+      </div>
+      <div class="card">
+        <i class="fas fa-handshake icon"></i>
+        <div class="value" id="ans5">0</div>
+        <div class="label">Companies Tie-Ups</div>
+      </div>
+    </div>
+
+    <script>
+      function user_count() {
+        let count = 0;
+        let stop = setInterval(() => {
+          count += 100;
+          document.getElementById("ans1").innerHTML = count + "+";
+          if (count >= 37500) {
+            clearInterval(stop);
+          }
+        }, 10);
+      }
+      user_count();
+
+      function branches_count() {
+        let count = 0;
+        let stop = setInterval(() => {
+          count++;
+          document.getElementById("ans2").innerHTML = count + "+";
+          if (count >= 22) {
+            clearInterval(stop);
+          }
+        }, 70);
+      }
+      branches_count();
+
+      function certificate_count() {
+        let count = 0;
+        let stop = setInterval(() => {
+          count++;
+          document.getElementById("ans3").innerHTML = count + "+";
+          if (count >= 8) {
+            clearInterval(stop);
+          }
+        }, 500);
+      }
+      certificate_count();
+
+      function Aproved_courses_count() {
+        let count = 0;
+        let stop = setInterval(() => {
+          count++;
+          document.getElementById("ans4").innerHTML = count + "+";
+          if (count >= 50) {
+            clearInterval(stop);
+          }
+        }, 200);
+      }
+      Aproved_courses_count();
+
+      function compnies_tieup_count() {
+        let count = 0;
+        let stop = setInterval(() => {
+          count += 100;
+          document.getElementById("ans5").innerHTML = count + "+";
+          if (count >= 1500) {
+            clearInterval(stop);
+          }
+        }, 100);
+      }
+      compnies_tieup_count();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Countdown</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      img {
+        display: none;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="answer"></h1>
+      <img
+        src="https://i.pinimg.com/originals/47/03/1a/47031a84b5b3a212ed8110ef7971f9c8.gif"
+        alt=""
+        id="image"
+      />
+    </div>
+
+    <script>
+      let count = 10;
+      let stop = setInterval(() => {
+        count--;
+        document.querySelector("#answer").innerHTML = count;
+        if (count === 0) {
+          clearInterval(stop);
+          document.querySelector("#image").style.display = "block";
+          document.querySelector("#answer").style.display = "none";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
