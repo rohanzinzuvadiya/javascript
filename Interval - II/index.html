@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    
+     .carousel {
+        position: relative;
+        width: 800px;
+        height: 400px; 
+        margin: 40px auto;
+        overflow: hidden;
+      }
+
+   
+     .carousel-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+     .carousel-item {
+        position: relative;
+        display: none; 
+        width: 100%;
+        height: 100%;
+      }
+
+     .carousel-item img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+      }
+
+  
+     .carousel-item:first-child {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+ 
+    <div class="carousel">
+
+      <div class="carousel-inner">
+ 
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/600" alt="Image 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/600?2" alt="Image 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/800/600?3" alt="Image 3" />
+        </div>
+      
+      </div>
+    </div>
+
+    <script>
+      let carouselItems = document.querySelectorAll(".carousel-item");
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        carouselItems.forEach((item) => {
+          item.style.display = "none";
+        });
+        carouselItems[index].style.display = "block";
+      }
+
+      function startSlider() {
+        setInterval(() => {
+          currentIndex++;
+          if (currentIndex === carouselItems.length) {
+            currentIndex = 0;
+          }
+          showSlide(currentIndex);
+        }, 2000);
+      }
+
+      startSlider();
+    </script>
+  </body>
+</html>
