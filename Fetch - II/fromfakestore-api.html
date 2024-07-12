@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data from Fake Store API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+     .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+     .product {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+     .product:last-child {
+        border-bottom: none;
+      }
+     .product img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Data from Fake Store API</h1>
+      <div id="products"></div>
+    </div>
+  </body>
+</html>
+
+<script>
+    fetch("https://fakestoreapi.com/products")
+   .then((res)=>{
+        return res.json()
+    }).then((json)=>{
+        console.log(json)
+        show_Data(json)
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+    function show_Data(json){
+        json.map((el)=>{
+            let box = document.createElement("div")
+            box.className = "product";
+            
+            let heading = document.createElement("h2")
+            heading.innerHTML = el.title
+            heading.setAttribute("id", "item_Text")
+
+            let pic = document.createElement("img")
+            pic.setAttribute("src", el.image)
+            pic.setAttribute("class", "item_Img")
+
+            let price = document.createElement("p")
+            price.innerHTML = el.price
+            price.setAttribute("id", "item_Price")
+
+            box.append(heading, pic, price)
+            
+            document.getElementById("products").append(box)
+        })
+    }
+</script>

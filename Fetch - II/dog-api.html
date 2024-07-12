@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data from DOG API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .dog {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      .dog:last-child {
+        border-bottom: none;
+      }
+      .dog img {
+        width: 200px;
+        height: 200px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Data from DOG API</h1>
+      <div id="dogs"></div>
+    </div>
+  </body>
+</html>
+
+<script>
+  fetch("https://dog.ceo/api/breeds/image/random")
+    .then((res) => {
+      return res.json()
+    }).then((json) => {
+      console.log(json)
+      showImg(json)
+    }).catch((err) => {
+      console.log(err)
+    })
+
+  function showImg(json) {
+    let box = document.createElement('div')
+    box.className = "dog"; 
+
+    let pic = document.createElement('img')
+    pic.setAttribute("src", json.message)
+    pic.setAttribute("class", "img")
+    box.append(pic)
+    document.getElementById("dogs").append(box)
+  }
+</script>
