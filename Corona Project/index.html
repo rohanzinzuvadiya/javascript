@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url('https://culture.ec.europa.eu/sites/default/files/styles/eac_ratio_16_9_large/public/2020-09/cover-Covid19.png?h=e499574d&itok=BcdNZMyo')
+            no-repeat center center/cover;
+      }
+
+      #main {
+        height: 650px;
+        width: 400px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        color: white;
+        text-align: center;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      #main h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        letter-spacing: 1.5px;
+      }
+
+      #state-select {
+        height: 45px;
+        width: 85%;
+        font-size: 1.1rem;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        border-radius: 10px;
+        padding-left: 15px;
+        margin-top: 20px;
+        backdrop-filter: blur(5px);
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+
+      #bt1 {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        outline: none;
+        backdrop-filter: blur(5px);
+      }
+
+      #bt1:hover {
+        transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .label {
+        font-size: 1.5rem;
+        margin-top: 30px;
+      }
+
+      .data {
+        font-size: 2rem;
+        margin-top: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .data-positive {
+        color: #007bff;
+      }
+
+      .data-recovered {
+        color: #28a745;
+      }
+
+      .data-deceased {
+        color: #dc3545;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>COVID-19 Tracker</h1>
+      <select id="state-select">
+        <option value=""></option>
+        <option value="AN">Andaman and Nicobar Islands</option>
+        <option value="AP">Andhra Pradesh</option>
+        <option value="AR">Arunachal Pradesh</option>
+        <option value="AS">Assam</option>
+        <option value="BR">Bihar</option>
+        <option value="CH">Chandigarh</option>
+        <option value="CT">Chhattisgarh</option>
+        <option value="DL">Delhi</option>
+        <option value="DN">Dadra and Nagar Haveli</option>
+        <option value="DD">Daman and Diu</option>
+        <option value="GA">Goa</option>
+        <option value="GJ">Gujarat</option>
+        <option value="HR">Haryana</option>
+        <option value="HP">Himachal Pradesh</option>
+        <option value="JK">Jammu and Kashmir</option>
+        <option value="JH">Jharkhand</option>
+        <option value="KA">Karnataka</option>
+        <option value="KL">Kerala</option>
+        <option value="LA">Ladakh</option>
+        <option value="LD">Lakshadweep</option>
+        <option value="MH">Maharashtra</option>
+        <option value="ML">Meghalaya</option>
+        <option value="MN">Manipur</option>
+        <option value="MP">Madhya Pradesh</option>
+        <option value="MZ">Mizoram</option>
+        <option value="NL">Nagaland</option>
+        <option value="OR">Odisha</option>
+        <option value="PB">Punjab</option>
+        <option value="PY">Puducherry</option>
+        <option value="RJ">Rajasthan</option>
+        <option value="SK">Sikkim</option>
+        <option value="TN">Tamil Nadu</option>
+        <option value="TG">Telangana</option>
+        <option value="TR">Tripura</option>
+        <option value="UP">Uttar Pradesh</option>
+        <option value="UT">Uttarakhand</option>
+        <option value="WB">West Bengal</option>
+      </select>
+      <button id="bt1">🔍</button>
+      <div>
+        <div class="label">Total Cases:</div>
+        <div id="p_case" class="data data-positive">0</div>
+
+        <div class="label">Recovered Cases:</div>
+        <div id="r_case" class="data data-recovered">0</div>
+
+        <div class="label">Deceased Cases:</div>
+        <div id="d_case" class="data data-deceased">0</div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let BASE_URL = "https://data.covid19india.org/v4/min/data.min.json";
+      let covidData;
+
+      // Fetch data once when the page loads
+      fetch(BASE_URL)
+        .then((res) => res.json())
+        .then((json) => {
+          covidData = json;
+          // Trigger display of initial state data
+          displayData();
+        });
+
+      // Add change event listener to the dropdown
+      document.getElementById("state-select").addEventListener("change", displayData);
+
+      // Function to display data based on selected state
+      function displayData() {
+        let stateCode = document.getElementById("state-select").value;
+        let positive = document.getElementById("p_case");
+        let recover = document.getElementById("r_case");
+        let deceas = document.getElementById("d_case");
+
+        if (covidData && covidData[stateCode]) {
+          positive.innerHTML = covidData[stateCode].total.confirmed || "N/A";
+          recover.innerHTML = covidData[stateCode].total.recovered || "N/A";
+          deceas.innerHTML = covidData[stateCode].total.deceased || "N/A";
+        } else {
+          positive.innerHTML = "N/A";
+          recover.innerHTML = "N/A";
+          deceas.innerHTML = "N/A";
+        }
+      }
+    });
+  </script>
+</html>
